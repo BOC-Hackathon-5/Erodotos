@@ -24,8 +24,10 @@
     "@next/bundle-analyzer": "^14.2.4",
     "@tabler/icons-react": "^3.6.0",
     "next": "14.2.4",
+    "plotly.js": "^2.35.2",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-plotly.js": "^2.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -39,6 +41,7 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.8",
+    "@types/plotly.js": "^2.33.4",
     "@types/react": "18.3.3",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",

@@ -1,18 +1,18 @@
-import '@mantine/core/styles.css';
+"use client";
 
-import React from 'react';
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { theme } from '../theme';
-
-export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
-};
+import "@mantine/core/styles.css";
+import React from "react";
+import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import { theme } from "../theme";
+import { Navbar } from "../components/Navbar/Navbar";
+import { Footer } from "../components/Footer/Footer";
+import classes from "./style.module.css";
 
 export default function RootLayout({ children }: { children: any }) {
   return (
     <html lang="en">
       <head>
+        <title>SentiLens</title>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta
@@ -21,7 +21,11 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <Navbar />
+          <div className={classes.root}>{children}</div>
+          <Footer />
+        </MantineProvider>
       </body>
     </html>
   );
