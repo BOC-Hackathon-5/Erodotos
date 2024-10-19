@@ -27,7 +27,7 @@ services:
     container_name: sl-stock-info-api
     image: sentilens/sl-stock-info-api:latest
     ports:
-      - 2080:8080
+      - 20080:8080
     restart: always
 
 volumes:
