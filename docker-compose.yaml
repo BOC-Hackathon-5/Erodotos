@@ -7,11 +7,32 @@ services:
     volumes:
       - mongo:/data/db
     restart: always
+  sl-news-crawler:
+    container_name: sl-news-crawler
+    image: sentilens/sl-news-crawler:latest
+    depends_on:
+      - mongo
+    restart: always
+    env_file: "sl-news-crawler/.env"
+  sl-sentiment-api:
+    container_name: sl-sentiment-api
+    image: sentilens/sl-sentiment-api:latest
+    ports:
+      - 1080:8080
+    depends_on:
+      - mongo
+    restart: always
+    env_file: "sl-sentiment-api/.env"
+  sl-stock-info-api:
+    container_name: sl-stock-info-api
+    image: sentilens/sl-stock-info-api:latest
+    ports:
+      - 2080:8080
+    restart: always
 
 volumes:
   mongo:
-
-networks:
-  host:
-    name: host
-    external: true
+# networks:
+#   host:
+#     name: host
+#     external: true
