@@ -1,0 +1,17 @@
+services:
+  mongo:
+    container_name: sl-mongo
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
+    restart: always
+
+volumes:
+  mongo:
+
+networks:
+  host:
+    name: host
+    external: true
